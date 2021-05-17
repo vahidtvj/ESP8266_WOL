@@ -5,6 +5,7 @@
 
 ## Setup
 *  Install [`thinger.io`](https://docs.thinger.io/quick-sart/devices/arduino#installation) and [`WakeOnLan`](https://www.arduino.cc/reference/en/libraries/wakeonlan/) from arduino library manager
+*  Also install [ESP8266Ping](https://github.com/vahidtvj/ESP8266_WOL)
 *  Create an account at [thinger.io](https://thinger.io/) 
 *  Add a new device on thinger console 
 *  Create a `secrets.h` file from example and fill in the blanks
