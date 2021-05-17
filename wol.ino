@@ -2,7 +2,12 @@
 #include <WiFiUdp.h>
 #include <WakeOnLan.h>
 
+#include <ESP8266WiFi.h>
+#include <ESP8266Ping.h>
+
 #include "secrets.h"
+
+IPAddress PCip(SECRET_PCIPADDRESS);
 
 WiFiUDP UDP;
 WakeOnLan WOL(UDP);
@@ -25,6 +30,9 @@ void setup()
   thing["Wake Computer"] << [](pson &in) {
     if (in)
       wakeMyPC();
+  };
+  thing["is Awake"] >> [](pson &out) {
+    out = Ping.ping(PCip);
   };
 }
 
